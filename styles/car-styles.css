@@ -1,65 +1,125 @@
+@font-face {
+   font-family: carfont;
+   src: url("fonts/Airstream-webfont.svg");
+   src: url("fonts/Airstream-webfont.ttf");
+   src: url("fonts/Airstream-webfont.woff");
+}
+:root {
+   --car-img-width: 20vw;
+   --car-img-height: 15vw;
+   --car-title-height: calc(var(--car-img-height) * 0.33)
+}
+body, html {
+   height: 100%;
+}
 body {
    display: flex; 
    flex-direction: column;
-   background-color: rgb(0, 238, 255);
+   background-color: rgb(238, 241, 177);
+   margin: 0;
 }
 .logo  {
    font-size: 2em;
    background-color: red;
    display: block;
    text-align: center;
+   font-family: carfont;
+   text-transform: uppercase;
 }
 .main-class {
-
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   flex-grow: 1;
 }
 .details-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 2.5vh;
-
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   margin-bottom: 10vh;
 }
 .details-image {
-
-    width: 70vw;
-    height: 60vw;
-    border-radius: 25%;
-   
+   width: 80vw;
+   height: 70vw;
+   border-radius: 25%;
 }
 .details-title {
    display: block;
-
 }
 .thumbnails-list {
    list-style: none;
    display:flex;
    flex-direction: row;
    flex-wrap: wrap;
-   max-height: 25vh;
+   max-height: 20vh;
    overflow-y: auto;
    justify-content: space-around;
    padding-left: 0;
 }
 .thumbnails-item {
-   width: 20vw;
-   height: 20vw;
+   max-width: var(--car-img-width);
+   min-height: calc(var(--car-img-height) + var(--car-title-height));
    margin-top: 2.5vh;
-   border: solid 3px black;
+   border: solid 1px black;
    border-radius: 25%;
    overflow: hidden;
 }
 .thumbnails-image {
-    width: 20vw;
-    height: 15vw;
-    display: block;
+   width: var(--car-img-width);
+   height: var(--car-img-height);
+   display: block;
 }
 .thumbnails-title {
-    display: block; 
-    text-align: center;
-    height: 5vw;
-    background-color: beige;
+   display: block; 
+   text-align: center;
+   height: var(--car-title-height);
+   background-color: pink;
 }
 .thumbnails-anchor {
-
-   text-decoration: none;
+  text-decoration: none;
 }
+@media (min-width: 560px) {
+   .thumbnails-list {
+       flex-direction: column;
+       flex-wrap: nowrap;
+       max-height: 80vh;
+       order: -1;
+       justify-content: flex-start;
+   }
+   .main-class {
+       flex-direction: row;
+       justify-content: space-around;
+   }
+   .details-image {
+       width: 40vw;
+       height: 30vw;
+   }
+   :root {
+      --car-img-width: 12vw;
+      --car-img-height: 6vw;
+      --car-title-height: calc(var(--car-img-height) * 0.33);
+   }
+}
+ @media (min-width: 900px) {
+      .thumbnails-list {
+          flex-direction: column;
+          flex-wrap: nowrap;
+          max-height: 80vh;
+          order: -1;
+          justify-content: flex-start;
+      }
+      .main-class {
+          flex-direction: row;
+          justify-content: space-around;
+      }
+      .details-image {
+          width: 60vw;
+          height: 35vw;
+      }
+      :root {
+         --car-img-width: 12vw;
+         --car-img-height: 6vw;
+         --car-title-height: calc(var(--car-img-height) * 0.33);
+      }
+      
+   }
