@@ -1,16 +1,56 @@
 body, html {
     height: 100%;
 }
+:root {
+    --cell-width: 10vw;
+    --cell-height: 10vw;
+}
 .board {
     display: flex;
-    flex-direction: column;
     align-items: center;
-    height: 100%;
-    justify-content: center;
+    
 }
 .board-row {
     display: flex;
-    flex-direction: row;
     flex-wrap: wrap;
+    max-width: calc(var(--cell-width)*8);
     border: solid 1px black;
+}
+.cell-blak {
+    background-color: black;
+    width: var(--cell-width);
+    height: var(--cell-height);
+}
+.cell-white {
+    background-color: white;
+    width: var(--cell-width);
+    height: var(--cell-height);
+}
+@media (min-width: 560px){
+    :root {
+        --cell-width: 5vw;
+        --cell-height: 5vw;
+    }
+    .cell-blak {
+        width: var(--cell-width);
+        height: var(--cell-height);
+    }
+    .cell-white {
+        width: var(--cell-width);
+        height: var(--cell-height);
+    }
+}
+@media (min-width: 900px){
+    :root {
+        --cell-width: 6vw;
+        --cell-height: 6vw;
+    }
+    .cell-blak {
+        width: var(--cell-width);
+        height: var(--cell-height);
+    }
+    .cell-white {
+        width: var(--cell-width);
+        height: var(--cell-height);
+    }
 }
