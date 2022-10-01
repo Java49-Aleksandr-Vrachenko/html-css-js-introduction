@@ -7,7 +7,9 @@ body, html {
 }
 .board {
     display: flex;
+    justify-content: center;
     align-items: center;
+    height: 100%;
     
 }
 .board-row {
@@ -15,6 +17,7 @@ body, html {
     flex-wrap: wrap;
     max-width: calc(var(--cell-width)*8);
     border: solid 1px black;
+    
 }
 .cell-blak {
     background-color: black;
