@@ -1,0 +1,16 @@
+body, html {
+    height: 100%;
+}
+.board {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    justify-content: center;
+}
+.board-row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    border: solid 1px black;
+}
