@@ -63,8 +63,9 @@ body {
    background-color: yellow;
    border: solid 3px red;
    position: absolute;
-   left: 28vw;
+   left: 0;
    bottom: 3vw;
+   font-size: 1.5em;
    
 }
 .thumbnails-list {
@@ -110,7 +111,7 @@ body {
        --thumbnails-title-height: calc(var(--thumbnails-img-height)* 0.25)
    }
    .logo {
-       font-size: 1.8em;
+       font-size: 1.9em;
    }
    .thumbnails-list {
        flex-direction: column;
@@ -133,8 +134,9 @@ body {
        margin-bottom: 0;
    }
    .details-title {
-      left: 15vw;
+      left: 0;
       bottom: 2vw;
+      font-size: 1.5em;
    }
    .thumbnails-item:hover {
       margin-right: 1vw;
@@ -154,8 +156,8 @@ body {
       margin-right: 5vw;
    }
    .details-title {
-      font-size: 1.5em;
-      left: 15vw;
+      font-size: 2em;
+      left: 0vw;
       bottom: 1vw;
    }
    .details-image {
