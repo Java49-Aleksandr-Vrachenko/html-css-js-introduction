@@ -1,39 +1,30 @@
+let number = "045451587";
+let teudatStrNumber = Array.from(number);
+ let charCod0 = "0".charCodeAt();
 
-function fromStringToNumber(string, base) {
-    
-             let result = 0;
-             for (let i = 0; i < string.length; i++) {
+checkTeudatZhut(teudatStrNumber);
 
-                let code = string.charCodeAt(i) - 55;
-                result = result * base + code;
-             }
-             return result;
-        
-}
-console.log(fromStringToNumber("JAVA", 36));
+ function checkTeudatZhut(teudatStrNumber) {
 
-
-
-function fromNumberToString(number, base) {
-    number = Math.abs(number);
-    let res = "";
-    do {
-
-        let digit = number % base;
-
-        if (base == 36){
-            let sym = String.fromCharCode(digit + 55);
-            res = sym + res;
-        }else{
-            let sym = digit == 0 ? '0' : '1';
-            res = sym + res;
+    let numTZ = teudatStrNumber.map(function(symbol,index){
+        let value = symbol.charCodeAt() - charCod0;
+        if(index % 2 != 0){
+            value *= 2;
+            if(value > 9){
+                value -= 9;
+            }
         }
-        
-        number = Math.trunc(number / base);
-
-     } while(number != 0);
+        return value;
+    });
     
-     return res;
- 
-}
-console.log(fromNumberToString(900550, 36));
+    let Sum = numTZ.reduce(function(sum, res){
+        return sum + res;
+    },0);
+
+    let contrSum = Sum % 10 == 0 ? true : false;
+
+    console.log("TZ number = ",number, "Valid = ",contrSum);
+
+    return contrSum;
+ }
+/**************************************************************************/
