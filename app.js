@@ -1,30 +1,49 @@
-let number = "045451587";
-let teudatStrNumber = Array.from(number);
- let charCod0 = "0".charCodeAt();
+console.log("/*********************Task 1********************/");
+let string = ["abc","lmn","cd",];
+let newString = console.log(ulSurround(string));
+function ulSurround(string) {
+   
+    let newString = string.map(function(elm,ind){
+       return "<li>" + elm + "<li>";
+    })
+    newString.unshift("<ul>");
+    newString.push("/ul");
+    return newString;
+}
 
-checkTeudatZhut(teudatStrNumber);
+console.log("/*********************Task 2********************/");
 
- function checkTeudatZhut(teudatStrNumber) {
+let strings = ["abc", "lmn","cd","abc","abc"];
+let check = "abc";
+console.log(count(strings, check));
 
-    let numTZ = teudatStrNumber.map(function(symbol,index){
-        let value = symbol.charCodeAt() - charCod0;
-        if(index % 2 != 0){
-            value *= 2;
-            if(value > 9){
-                value -= 9;
-            }
-        }
-        return value;
-    });
-    
-    let Sum = numTZ.reduce(function(sum, res){
-        return sum + res;
-    },0);
+function count(strings, check){
+    let count = 0;
+    strings.forEach(function(e) {
+        if(check == e)
+           count++;
+});
+    return count;
+};
 
-    let contrSum = Sum % 10 == 0 ? true : false;
+console.log("/*********************Task 3********************/");
 
-    console.log("TZ number = ",number, "Valid = ",contrSum);
+let arS = [1,2,3,4,5,6,7];
+let arD = [10,20,30,40,50,60,70];
+arrayCopy(arS, 3, arD, 4, 3);
+console.log("arD=",arD);
 
-    return contrSum;
- }
-/**************************************************************************/
+function arrayCopy(src, srcPos, dst, dstPos, length) {
+    let cpy = src.slice(srcPos, srcPos+length);
+    dst.splice(dstPos, 0, ...src.slice(srcPos, srcPos+length));
+};
+
+console.log("/*********************Task 4********************/");
+
+let number = [1, 2, 3, 4, 5, 6, 7];
+move(number, 2, 4);
+console.log(number);
+
+function move(number, index, position) {
+    number.splice(index + position, 0, number.splice(index,1)[0]);
+}
