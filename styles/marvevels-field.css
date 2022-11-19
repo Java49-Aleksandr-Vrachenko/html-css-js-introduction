@@ -1,5 +1,5 @@
 body {
-    display: flex;
+    display:flex;
     flex-direction: column;
     align-items: center;
 }
@@ -10,15 +10,7 @@ body {
 .letter-guess {
     font-size: 1.5em;
     margin-left: 2vw;
-}
-.red {
-    color: red;
-}
-.green {
-    color: green;
-
-}
-.yellow {
-
-    color: yellow;
+    background-color: black;
+    width: 3.5vw;
+    text-align: center;
 }
